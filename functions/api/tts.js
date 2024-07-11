@@ -2,7 +2,7 @@ export async function onRequestPost(context) {
   const { request, env } = context;
   const { model, voice, input } = await request.json();
 
-  const ttsResponse = await fetch('https://burn.hair/v1/audio/speech', {
+  const ttsResponse = await fetch('https://api.openai.one/v1/audio/speech', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${env.TTS_API_KEY}`,
